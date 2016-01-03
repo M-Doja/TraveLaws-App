@@ -30,33 +30,29 @@
 					      <md-card-content id='statePic' style="background-image:url('{{s.image}}');background-repeat: no-repeat;text-align:center;background-size:100%;padding-top:10px;height:135px;">
 					      </md-card-content>
 								<!--  -->
-
-	      <!-- <div class="md-actions" layout="row" style="color:black"layout-align="end center">
-	        <md-button><a style="color:black" target='_blank' href="{{s.laws.gen}}" >General Laws</a> | </md-button>
-	        <md-button><a style="color:black" target='_blank' href="{{s.laws.traf}}" >  Traffic Laws</a> | </md-button>
-					<md-button><a style="color:black" target='_blank' href="{{s.laws.gun}}" > Gun Laws</a> | </md-button>
-	        <md-button><a style="color:black" target='_blank' href="{{s.laws.bus}}" > Business Laws</a></md-button>
-	      </div> -->
 					    </md-card>
-							<!-- <md-button  style="color:black;font-size:12px;"class="md-title md-default md-raised" ng-click='vm.announceClick($index)'> See {{s.state}} laws</md-button> -->
 						</md-content>
-				<md-menu style="color:black;">
-          <md-button aria-label="Open demo menu" class="md-default" ng-click="$mdOpenMenu($event)">See
-						{{s.state}} laws
-          </md-button>
-          <md-menu-content width="6">
-            <md-menu-item >
-              <md-button href="{{s.laws.bus}}" target="_blank">  Business Laws </md-button>
-            </md-menu-item>
-          </md-menu-content>
-        </md-menu>
+
+						<!-- LAW CATEGORY DISPLAY -->
+						<md-menu style="color:black;">
+							<!-- Modal button -->
+		          <md-button style="margin-left:44px;margin-top:-20px;margin-bottom:15px;"aria-label="Open demo menu" class="md-default" ng-click="$mdOpenMenu($event)">See
+								{{s.state}} laws
+		          </md-button>
+							<!-- Modal content -->
+		          <md-menu-content width="3">
+		            <md-item style="color:black">
+									<span style="text-align:right;background-color:lightblue;font-size:15px;">{{s.state}}</span><br>
+									<md-button style='color:black;' href="">  Select a law category: </md-button><br>
+		              <md-button style='color:black;' href="{{s.laws.gen}}" target="_blank">  General Laws </md-button><br>
+									<md-button style='color:black;' href="{{s.laws.bus}}" target="_blank">  Business Laws </md-button><br>
+									<md-button style='color:black;' href="{{s.laws.traf}}" target="_blank">  Traffic Laws </md-button><br>
+									<md-button style='color:black;' href="{{s.laws.gun}}" target="_blank">  Gun Laws </md-button>
+		            </md-item>
+		          </md-menu-content>
+		        </md-menu>
 					</div>
-
-
-
-
-
-					<!-- end notifying div -->
+					<!-- MORE COMING notifying div -->
 					<div class='col-md-3' style="margin:0 auto">
 						<md-content style="text-align:center;background-color:purple;width:220px;margin:20px auto">
 					    <md-card style="background-color:tan;width:205px;">
@@ -64,26 +60,11 @@
 					      <md-card-content id='statePic' style="text-align:center;background-size:100%;padding-top:10px;height:135px;">
 									<h3 style="text-align:center;color:red;font-weight:bold">More states coming soon!</h3>
 					      </md-card-content>
-								<!--  -->
-
-	      <!-- <div class="md-actions" layout="row" style="color:black"layout-align="end center">
-	        <md-button><a style="color:black" target='_blank' href="{{s.laws.gen}}" >General Laws</a> | </md-button>
-	        <md-button><a style="color:black" target='_blank' href="{{s.laws.traf}}" >  Traffic Laws</a> | </md-button>
-					<md-button><a style="color:black" target='_blank' href="{{s.laws.gun}}" > Gun Laws</a> | </md-button>
-	        <md-button><a style="color:black" target='_blank' href="{{s.laws.bus}}" > Business Laws</a></md-button>
-	      </div> -->
 					    </md-card>
-							<md-button  style="color:black;font-size:12px;"class="md-title md-default md-raised" > About TraveLaws</md-button>
-							<md-content>
-
-							</md-content>
 					</div>
 				</div>
 			</div>
 		</div>
 	</form>
-
-<!-- <footer style="text-align:center;background-color:red;height:50px;"><span style="padding-top:18px;"><b>&copy 2016 Phoja Unlimited LLC</b></span></footer> -->
-
 </div>
 </div>
