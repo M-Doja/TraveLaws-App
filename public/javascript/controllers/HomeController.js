@@ -5,7 +5,7 @@
 
 	function HomeController($state, HomeFactory,$scope, $mdDialog, $mdMedia) {
 		var vm = this;
-		vm.title = 'Welcome to TraveLaws';
+		vm.title = 'TraveLaws';
 		vm.showLaws = true;
 		vm.States = HomeFactory.States;
 		vm.TraveLaws = false;

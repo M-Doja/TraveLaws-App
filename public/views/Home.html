@@ -7,50 +7,52 @@
 
 	<div ng-show='vm.TraveLaws'>
 		<md-input-container>
-			<md-button style="width:100px;margin:15px;"class="md-raised md-warn" ng-click='vm.leaveTraveLaws()'>Exit</md-button>
+			<!-- <md-button style="width:100px;margin:15px;"class="md-raised md-warn" ng-click='vm.leaveTraveLaws()'>Exit</md-button> -->
 		</md-input-container>
 	<div style="text-align:center;font-family:'Architects Daughter', cursive;font-size:5em;font-weight:bold;margin-top:-10px;">{{vm.title}}</div>
 	<h4 style="text-align:center">{{vm.head}}</h4>
 	<form class="form-inline">
 		<div class="well container " style="text-align:justify;padding:20px">
-			<p style="font-size:20px;padding-bottom:25px;"><span style="font-size:1.5em">TraveLaws</span> is your one stop resource for law information on different U.S. states. Whether you're on vaction or you're looking to move your business to another state, TraveLaws is the resource for you!</p>
+			<p style="font-size:20px;padding-bottom:25px;text-align:center;"><span style="font-size:1.5em">TraveLaws</span> is your one stop resource for law information on different U.S. states. Whether you're on vacation or you're looking to move your business to another state, TraveLaws is the resource for you!</p>
 			<h4 >What is TraveLaws?</h4>
-			<p >TraveLaws is your go to resource to find different laws for different states all on one site. As some U.S. states don't have goverment websites regarding certain areas of law, here on TraveLaws we make it easy for you to find and connect to those corresponding online state resources.</p>
+			<p >TraveLaws is a resource used to find different state laws for different states all on one site. As some U.S. states don't have goverment websites regarding certain areas of law, here on TraveLaws we make it easy for you to find and connect to those corresponding online state resources.</p>
 		</div>
 		<div class=" " style="background-color:white;">
 			<!-- rgba(20,100,0,0.3) -->
 			<div >
 				<div>
-					<h3 style="text-align:center">Select a category of law for the corresponding state.</h3>
+					<h3 style="text-align:center;padding-top:10px;color:grey;">Select a category of law for the corresponding state.</h3>
 					<hr>
 					<div class='col-md-3' style="margin:0 auto"ng-repeat='s in vm.States'>
-						<md-content style="text-align:center;background-color:purple;width:220px;margin:20px auto">
-					    <md-card style="background-color:tan;width:205px;">
+						<md-content style="text-align:center;background-color:rgba(20,100,0,0.3);width:220px;margin:20px auto">
+					    <md-card style="background-color:black;width:205px;">
 								<!-- State Flag Image -->
 					      <md-card-content id='statePic' style="background-image:url('{{s.image}}');background-repeat: no-repeat;text-align:center;background-size:100%;padding-top:10px;height:135px;">
 					      </md-card-content>
 								<!--  -->
+								<md-menu md-position-mode="target-right target" style="color:black;">
+									<!-- Modal button -->
+				          <md-button style="margin: 0;"aria-label="Open demo menu" class="md-default md-raised" ng-click="$mdOpenMenu($event)">
+										<b>{{s.state}}</b>
+				          </md-button>
+									<!-- Modal content -->
+				          <md-menu-content width="3"  >
+				            <md-item style="color:black;">
+											<span style="text-align:right;background-color:lightblue;font-size:15px;">{{s.state}}</span><br>
+											<md-button style='color:black;' href="">  Select a law category: </md-button><br>
+				              <md-button style='color:black;' href="{{s.laws.gen}}" target="_blank">  General Laws </md-button><br>
+											<md-button style='color:black;' href="{{s.laws.bus}}" target="_blank">  Business Laws </md-button><br>
+											<md-button style='color:black;' href="{{s.laws.traf}}" target="_blank">  Traffic Laws </md-button><br>
+											<md-button style='color:black;' href="{{s.laws.gun}}" target="_blank">  Gun Laws </md-button>
+				            </md-item>
+				          </md-menu-content>
+				        </md-menu>
 					    </md-card>
+
 						</md-content>
 
 						<!-- LAW CATEGORY DISPLAY -->
-						<md-menu style="color:black;">
-							<!-- Modal button -->
-		          <md-button style="margin-left:44px;margin-top:-20px;margin-bottom:15px;"aria-label="Open demo menu" class="md-default" ng-click="$mdOpenMenu($event)">See
-								{{s.state}} laws
-		          </md-button>
-							<!-- Modal content -->
-		          <md-menu-content width="3">
-		            <md-item style="color:black">
-									<span style="text-align:right;background-color:lightblue;font-size:15px;">{{s.state}}</span><br>
-									<md-button style='color:black;' href="">  Select a law category: </md-button><br>
-		              <md-button style='color:black;' href="{{s.laws.gen}}" target="_blank">  General Laws </md-button><br>
-									<md-button style='color:black;' href="{{s.laws.bus}}" target="_blank">  Business Laws </md-button><br>
-									<md-button style='color:black;' href="{{s.laws.traf}}" target="_blank">  Traffic Laws </md-button><br>
-									<md-button style='color:black;' href="{{s.laws.gun}}" target="_blank">  Gun Laws </md-button>
-		            </md-item>
-		          </md-menu-content>
-		        </md-menu>
+
 					</div>
 					<!-- MORE COMING notifying div -->
 					<div class='col-md-3' style="margin:0 auto">
@@ -68,3 +70,6 @@
 	</form>
 </div>
 </div>
+<div class="col-md-12">
+	<hr>
+<footer style="text-align:center;margin-bottom:0;margin-top:10px;color:black"><p><b>&copy 2016 Phoja Unlimted LLC</b></p></footer></div>
