@@ -40,18 +40,35 @@
 							<md-content style="text-align:center;background-color:rgba(20,100,0,0.3);width:220px;margin:20px auto">
 						    <md-card style="background-color:black;width:205px;">
 									<!-- State Flag Image -->
-						      <md-card-content id='statePic' style="background-image:url('{{s.image}}');background-repeat: no-repeat;text-align:center;background-size:100%;padding-top:10px;height:135px;">
+						      <md-card-content>
+									<md-menu md-position-mode="target-right target" style="color:black;">
+										<button aria-label="Open demo menu" class="md-default md-raised" ng-click="$mdOpenMenu($event)"><img id='statePic'src='{{s.image}}' height='90'></button>
+										<md-menu-content width="3"  >
+					            <md-item style="color:black;">
+												<span style="text-align:right;background-color:lightblue;font-size:15px;padding-left:5px;">{{s.state}}</span><br>
+												<md-button style='color:black;' href="">  Facts about {{s.state}} </md-button><br>
+					              <!-- <md-button style='color:black;' href="{{s.laws.gen}}" target="_blank">  General Laws </md-button><br> -->
+												<!-- <md-button style='color:black;' href="{{s.laws.bus}}" target="_blank">  Business Laws </md-button><br> -->
+												<!-- <md-button style='color:black;' href="{{s.laws.traf}}" target="_blank">  Traffic Laws </md-button><br> -->
+												<!-- <md-button style='color:black;' href="{{s.laws.gun}}" target="_blank">  Gun Laws </md-button> -->
+					            </md-item>
+					          </md-menu-content>
+					        </md-menu>
 						      </md-card-content>
+
+
+
+
 									<!--  -->
 									<md-menu md-position-mode="target-right target" style="color:black;">
 										<!-- Modal button -->
 					          <md-button style="margin: 0;"aria-label="Open demo menu" class="md-default md-raised" ng-click="$mdOpenMenu($event)">
-											<b>{{s.state}}</b>
+											<b>{{s.state}} Laws</b>
 					          </md-button>
 										<!-- Modal content -->
 					          <md-menu-content width="3"  >
 					            <md-item style="color:black;">
-												<span style="text-align:right;background-color:lightblue;font-size:15px;">{{s.state}}</span><br>
+												<span style="text-align:right;background-color:lightblue;font-size:15px;padding-left:5px;">{{s.state}}</span><br>
 												<md-button style='color:black;' href="">  Select a law category: </md-button><br>
 					              <md-button style='color:black;' href="{{s.laws.gen}}" target="_blank">  General Laws </md-button><br>
 												<md-button style='color:black;' href="{{s.laws.bus}}" target="_blank">  Business Laws </md-button><br>
