@@ -41,7 +41,7 @@ var gulp = require('gulp'),
     });
 
     gulp.task('assets', function(){
-      return gulp.src([options.public + 'images/**/*',
+      return gulp.src([options.public + 'img/**/*',
                        options.public + 'css/**/*',
                        options.public + 'javascript/**/*',
                        options.public + 'views/**/*',
