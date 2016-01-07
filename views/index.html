@@ -46,17 +46,24 @@
 									<!-- State Flag Image -->
 						      <md-card-content>
 									<md-menu md-position-mode="target-right target" style="color:black;">
-										<!-- <button aria-label="Open demo menu" class="md-default md-raised" ng-click="$mdOpenMenu($event)"> -->
+
 											<img aria-label="Open demo menu"ng-click="$mdOpenMenu($event)" id='statePic'src='{{s.image}}' height='100'>
 										<!-- </button> -->
-										<md-menu-content width="3"  >
-					            <md-item style="color:black;">
+										<md-menu-content width="4"  >
+					            <md-item style="color:black;padding-left:5px;">
 												<span style="text-align:right;background-color:lightblue;font-size:15px;padding-left:5px;">{{s.state}}</span><br>
 												<md-button style='color:black;' href="">  Facts about {{s.state}} </md-button><br>
-					              <!-- <md-button style='color:black;' href="{{s.laws.gen}}" target="_blank">  General Laws </md-button><br> -->
-												<!-- <md-button style='color:black;' href="{{s.laws.bus}}" target="_blank">  Business Laws </md-button><br> -->
-												<!-- <md-button style='color:black;' href="{{s.laws.traf}}" target="_blank">  Traffic Laws </md-button><br> -->
-												<!-- <md-button style='color:black;' href="{{s.laws.gun}}" target="_blank">  Gun Laws </md-button> -->
+												<p><b>Nickname:</b> {{s.facts.stNickName}}</p>
+												<p><b>Motto:</b> {{s.facts.stMotto}}</p>
+					              <p><b>Population:</b> {{s.facts.stPop}}</p>
+												<p><b>Sq. Area:</b> {{s.facts.stArea}}</p>
+												<p><b>Capitol:</b> {{s.facts.stCaptiol}}</p>
+												<p><b>Entered Union:</b> {{s.facts.stUnion}}</p>
+												<p><b>Mascot:</b> {{s.facts.stMascot}}</p>
+												<p><b>State Flower:</b> {{s.facts.stFlower}}</p>
+												<p><b>State Bird:</b> {{s.facts.stBird}}</p>
+
+
 					            </md-item>
 					          </md-menu-content>
 					        </md-menu>
