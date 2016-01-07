@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html ng-app="app">
 <head>
-	<title>TraveLaws</title>
+	<title>TravState</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angular-material/0.11.4/angular-material.css">
 	<link rel="stylesheet" type="text/css" href="bootstrap/dist/css/bootstrap.min.css">
@@ -12,23 +12,23 @@
 <body style="background-color:white;">
 
 	<div style="background-color:#1abace"ng-controller="HomeController as vm">
-		<div  class=""ng-show='vm.enterTraveLaws'style="height:600px;margin:0 auto;text-align:center">
-			<md-input-container style="text-align:center ">
-				<md-button class="md-raised md-warn" style="width:200px;margin:0 auto; margin-top:200px;"ng-click='vm.showTraveLaws()'>Enter TraveLaws</md-button>
+
+		<div>
+			<div style="text-align:center;margin-bottom:50px;">
+			<md-input-container style="display:inline;">
+				<!-- <md-button style="width:100px;margin:15px;"class="md-raised md-warn" ng-click='vm.leaveTraveLaws()'>Exit</md-button> -->
+				<md-button style="width:150px;margin:15px;"class="md-raised md-warn" ng-click='vm.Home()'>State Laws</md-button>
+				<md-button style="width:150px;margin:15px;"class="md-raised md-warn" ng-click='vm.showCamp()'>State Camping</md-button>
+				<md-button style="width:150px;margin:15px;"class="md-raised md-warn" ng-click='vm.leaveTraveLaws()'>About TravState </md-button>
 			</md-input-container>
 		</div>
-
-		<div ng-show='vm.TraveLaws'>
-			<md-input-container>
-				<!-- <md-button style="width:100px;margin:15px;"class="md-raised md-warn" ng-click='vm.leaveTraveLaws()'>Exit</md-button> -->
-			</md-input-container>
 		<div class="responsive"style="text-align:center;font-size:3.5em;font-weight:bold;margin-top:-10px;">{{vm.title}}</div>
 		<h4 style="text-align:center">{{vm.head}}</h4>
-		<form class="form-inline">
+		<form class="form-inline" ng-show='vm.TraveLaws'>
 			<div class="well container " style="text-align:justify;padding:20px">
-				<p style="font-size:20px;padding-bottom:25px;text-align:center;"><span style="font-size:1.5em">TraveLaws</span> is your one stop resource for law information on different U.S. states. Whether you're on vacation or you're looking to move your business to another state, TraveLaws is the resource for you!</p>
-				<h4 >What is TraveLaws?</h4>
-				<p >TraveLaws is a resource used to find different state laws for different states all on one site. As some U.S. states don't have goverment websites regarding certain areas of law, here on TraveLaws we make it easy for you to find and connect to those corresponding online state resources.</p>
+				<p style="font-size:20px;padding-bottom:25px;text-align:center;"><span style="font-size:1.5em">TravState</span> is your one stop resource for law information on different U.S. states. Whether you're on vacation or you're looking to move your business to another state, TravState is the resource for you!</p>
+				<h4 >What is TravState?</h4>
+				<p >TravState is a resource used to find different state laws for different states all on one site. As some U.S. states don't have goverment websites regarding certain areas of law, here on TravState we make it easy for you to find and connect to those corresponding online state resources.</p>
 			</div>
 			<div class=" " style="background-color:white;">
 				<!-- rgba(20,100,0,0.3) -->
@@ -62,16 +62,10 @@
 												<p><b>Mascot:</b> {{s.facts.stMascot}}</p>
 												<p><b>State Flower:</b> {{s.facts.stFlower}}</p>
 												<p><b>State Bird:</b> {{s.facts.stBird}}</p>
-
-
 					            </md-item>
 					          </md-menu-content>
 					        </md-menu>
 						      </md-card-content>
-
-
-
-
 									<!--  -->
 									<md-menu md-position-mode="target-right target" style="color:black;">
 										<!-- Modal button -->
@@ -91,11 +85,8 @@
 					          </md-menu-content>
 					        </md-menu>
 						    </md-card>
-
 							</md-content>
-
 							<!-- LAW CATEGORY DISPLAY -->
-
 						</div>
 						<!-- MORE COMING notifying div -->
 						<div class='col-md-3' style="margin:0 auto">
@@ -107,10 +98,15 @@
 						      </md-card-content>
 						    </md-card>
 						</div>
+
 					</div>
 				</div>
 			</div>
 		</form>
+		<div  ng-show='vm.showCamping'style="height:600px;margin-top:100px;text-align:center;background-color:#1abace;">
+
+			<h1>State Camping resources COMING SOON!</h1>
+		</div>
 	</div>
 	</div>
 	<div class="col-md-12">
