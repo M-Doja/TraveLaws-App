@@ -11,10 +11,10 @@ var smtpTransport = nodemailer.createTransport("SMTP",{
     secure: true,
     service: "Gmail",
     auth: {
-			user: "teamtravstate",
-			pass: "V@gab0nd"
-			// user: process.env.User_Name,
-			// pass: process.env.User_Password
+			// user: "",
+			// pass: ""
+			user: process.env.User_Name,
+			pass: process.env.User_Password
     }
 });
 
