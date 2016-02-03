@@ -1,0 +1,26 @@
+<div id="ctrlDiv" ng-controller="HomeController as vm">
+
+
+  <div><!-- START OF LAWS PAGE -->
+
+    <!-- BACKGROUND AND NAV BUTTONS -->
+    <div class="img-wrap">
+      <div id="navBtnDiv">
+        <md-input-container id="mdNavCon">
+          <md-button class="md-raised md-warn mdNavConBtn" ui-sref='Laws' ng-click='vm.Home()'>State Laws</md-button>
+          <md-button class="md-raised md-warn mdNavConBtn" ui-sref='Camping' ng-click='vm.showCamp()'>State Camping</md-button>
+          <md-button class="md-raised md-warn mdNavConBtn" ui-sref='About' ng-click='vm.showAboutPage()'>About TravState </md-button>
+        </md-input-container>
+      </div>
+
+      <div class="responsive"id="siteTitle">{{vm.title}}</div>
+      <p style="text-align:center" id="siteHead">Where travel and law come together</p>
+
+      <div id="siteDesc" class="container">
+        <!-- <p><span style="font-size:1.5em">TravState</span> is your one stop resource for law information on different U.S. states. Whether you're on vacation or you're looking to move your business to another state, TravState is the resource for you!</p><hr> -->
+        <h4 style="color:white">What is TravState?</h4>
+        <p >TravState is a resource used to find different state laws for different states all on one site. As some U.S. states don't have goverment websites regarding certain areas of law, here on TravState we make it easy for you to find and connect to those corresponding online state resources.</p>
+      </div>
+    </div>
+  </div>
+</div>

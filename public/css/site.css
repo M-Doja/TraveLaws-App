@@ -1,0 +1,23 @@
+body, html {height: 100%;margin: 0 auto; background-color: #333}
+p {color: white;}
+.card {margin-top: 330px;display: inline-block;}
+#ctrlDiv {background-color:white;}
+#navBtnDiv {text-align:center;margin-bottom:50px;margin-top: -10px;}
+#mdNavCon {display:inline;}
+.img-wrap {padding-top: 20px;}
+.mdNavConBtn {width:150px;margin:10px;}
+#siteTitle {text-align:center;font-size:3.5em;font-weight:bold;margin-top: -50px;padding-bottom: 20px;color:white;}
+#siteHead {color: white;font-family: sans-serif;font-size: 1.6em;font-weight: bold;background-color: rgba(0,0,0,0.7);padding-left:10px;padding-right:10px;margin-bottom: 40px;}
+#stateTitle {text-align:center;font-size:3.5em;font-weight:bold;margin-top: -20px;padding-bottom: 20px;color:white;}
+#siteDesc {padding-top: 20px;z-index: -1;} {text-align:justify;padding:20px;background-color:rgba(0,0,0,0.7)}
+.img-wrap { background-image:url('/img/road.jpg');background-repeat:no-repeat;
+position:absolute;height: 75%;width: 100%;}
+@media (min-width: 569px) {
+  #siteTitle {font-size: 6em;}
+  #siteHead  {background-color: transparent;font-size: 2.7em;margin-top:40px;}
+  #siteDesc {margin-top:150px;}
+}
+
+@media (min-width: 359px) and (max-width: 459px){#siteDesc {margin-top:120px;}}
+
+/*@media (min-width: 529px){#siteDesc {margin-top:50px;}}*/

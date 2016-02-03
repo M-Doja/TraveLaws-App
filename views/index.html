@@ -9,116 +9,20 @@
 	<link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" type="text/css" href="/css/site.css">
 </head>
-<body style="background-color:white;">
-
-	<div style="background-color:#1abace"ng-controller="HomeController as vm">
-
-		<div>
-			<div style="text-align:center;margin-bottom:50px;">
-			<md-input-container style="display:inline;">
-				<md-button style="width:150px;margin:15px;margin-top:50px;"class="md-raised md-warn" ng-click='vm.Home()'>State Laws</md-button>
-				<md-button style="width:150px;margin:15px;"class="md-raised md-warn" ng-click='vm.showCamp()'>State Camping</md-button>
-				<md-button style="width:150px;margin:15px;"class="md-raised md-warn" ng-click='vm.showAboutPage()'>About TravState </md-button>
-			</md-input-container>
-		</div>
-		<div class="responsive"style="text-align:center;font-size:3.5em;font-weight:bold;margin-top:-10px;">{{vm.title}}</div>
-		<h4 style="text-align:center">{{vm.head}}</h4>
-		<form class="form-inline" ng-show='vm.TraveLaws'>
-			<div class="well container " style="text-align:justify;padding:20px">
-				<p style="font-size:20px;padding-bottom:25px;text-align:center;"><span style="font-size:1.5em">TravState</span> is your one stop resource for law information on different U.S. states. Whether you're on vacation or you're looking to move your business to another state, TravState is the resource for you!</p>
-				<h4 >What is TravState?</h4>
-				<p >TravState is a resource used to find different state laws for different states all on one site. As some U.S. states don't have goverment websites regarding certain areas of law, here on TravState we make it easy for you to find and connect to those corresponding online state resources.</p>
+<body>
+	<ui-view></ui-view>
+	<!-- <div class="body-container">
+		<div class="wrap">
+			<div class="row">
+				<div class="col-md-12">
+					<hr>
+				<footer style="text-align:center;margin-bottom:0;margin-top:10px;color:black"><p><b>&copy 2016 Phoja Unlimted LLC</b></p></footer></div>
 			</div>
-			<div class=" " style="background-color:white;">
-				<!-- rgba(20,100,0,0.3) -->
-				<div >
-					<div>
-						<h3 style="text-align:center;padding-top:10px;color:grey;">Select a category of law for the corresponding state.</h3>
-						<h4 style="color:black;text-align:center">Click the state flag to view state facts or the button to view state laws</h4>
-						<hr>
-						<!-- <md-input-container style="text-align:center">
-			      <input style="text-align:center;color:black" value='' ng-model="searchText" placeholder="Search for a state...">
-			    </md-input-container><br> -->
-						<div class='col-md-3' style="margin:0 auto"ng-repeat='s in vm.States| filter:searchText'>
-							<md-content style="text-align:center;background-color:rgba(20,100,0,0.3);width:220px;margin:20px auto">
-						    <md-card style="background-color:black;width:205px;">
-									<!-- State Flag Image -->
-						      <md-card-content>
-									<md-menu md-position-mode="target-right target" style="color:black;">
-
-											<img aria-label="Open demo menu"ng-click="$mdOpenMenu($event)" id='statePic'src='{{s.image}}' height='100'>
-										<!-- </button> -->
-										<md-menu-content width="4"  >
-					            <md-item style="color:black;padding-left:5px;">
-												<span style="text-align:right;background-color:lightblue;font-size:15px;padding-left:5px;">{{s.state}}</span><br>
-												<md-button style='color:black;' href="">  Facts about {{s.state}} </md-button><br>
-												<p><b>Nickname:</b> {{s.facts.stNickName}}</p>
-												<p><b>Motto:</b> {{s.facts.stMotto}}</p>
-					              <p><b>Population:</b> {{s.facts.stPop}}</p>
-												<p><b>Sq. Area:</b> {{s.facts.stArea}}</p>
-												<p><b>Capitol:</b> {{s.facts.stCaptiol}}</p>
-												<p><b>Entered Union:</b> {{s.facts.stUnion}}</p>
-												<p><b>Mascot:</b> {{s.facts.stMascot}}</p>
-												<p><b>State Flower:</b> {{s.facts.stFlower}}</p>
-												<p><b>State Bird:</b> {{s.facts.stBird}}</p>
-					            </md-item>
-					          </md-menu-content>
-					        </md-menu>
-						      </md-card-content>
-									<!--  -->
-									<md-menu md-position-mode="target-right target" style="color:black;">
-										<!-- Modal button -->
-					          <md-button style="margin: 0;"aria-label="Open demo menu" class="md-default md-raised" ng-click="$mdOpenMenu($event)">
-											<b>{{s.state}} Laws</b>
-					          </md-button>
-										<!-- Modal content -->
-					          <md-menu-content width="3"  >
-					            <md-item style="color:black;">
-												<span style="text-align:right;background-color:lightblue;font-size:15px;padding-left:5px;">{{s.state}}</span><br>
-												<md-button style='color:black;' href="">  Select a law category: </md-button><br>
-					              <md-button style='color:black;' href="{{s.laws.gen}}" target="_blank">  General Laws </md-button><br>
-												<md-button style='color:black;' href="{{s.laws.bus}}" target="_blank">  Business Laws </md-button><br>
-												<md-button style='color:black;' href="{{s.laws.traf}}" target="_blank">  Traffic Laws </md-button><br>
-												<md-button style='color:black;' href="{{s.laws.gun}}" target="_blank">  Gun Laws </md-button>
-					            </md-item>
-					          </md-menu-content>
-					        </md-menu>
-						    </md-card>
-							</md-content>
-							<!-- LAW CATEGORY DISPLAY -->
-						</div>
-						<!-- MORE COMING notifying div -->
-						<div class='col-md-3' style="margin:0 auto">
-							<md-content style="text-align:center;background-color:rgba(20,100,0,0.3);;width:220px;margin:20px auto">
-						    <md-card style="background-color:tan;width:205px;">
-									<!-- Background Image -->
-						      <md-card-content id='statePic' style="text-align:center;background-size:100%;padding-top:10px;height:135px;background-color:lightgrey;">
-										<h3 style="text-align:center;color:red;font-weight:bold">More states coming soon!</h3>
-						      </md-card-content>
-						    </md-card>
-						</div>
-
-					</div>
-				</div>
-			</div>
-		</form>
-		<div  ng-show='vm.showCamping'style="height:600px;margin-top:100px;text-align:center;background-color:#1abace;">
-			<h1>State Camping resources COMING SOON!</h1>
 		</div>
-		<div  ng-show='vm.showAbout'style="height:100%;margin-top:80px;text-align:center;background-color:#1abace;">
-			<h1>What is TravState?</h1>
-			<p style="padding:10px 100px;font-size:1.5em;text-align:center">The idea behind TravState is that if you are travelling or need information on another state that you are not familiar with, you can use this app to get high level overview of the laws, as well as a few basic demographics of the state you are interested in.</p>
-			<p style="padding:10px 100px;font-size:1.75em;text-align:center">Currently this app is still under development even though is is live. Please do continue to check back with us as we continue to improve and add more features. </p>
+	</div> -->
 
-			<p style="padding:10px 100px;font-size:1.75em;text-align:center">If you have questions, comments, or suggestions please send them to</p>
-			<p style="text-align:center;font-size:1.5em;margin-top:-20px;"><a href="mailto:dojadeveloper@gmail.com" target="_top">dojadeveloper@gmail.com</a></p><br>
-			<h4 style="margin-bottom:50px;">to make a donation:<a href='https://www.paypal.me/DevDoja' target="_blank"> paypal.me/DevDoja</a></h4>
-		</div>
-	</div>
-	</div>
-	<div class="col-md-12">
-		<hr>
-	<footer style="text-align:center;margin-bottom:0;margin-top:10px;color:black"><p><b>&copy 2016 Phoja Unlimted LLC</b></p></footer></div>
+
+
 	<!-- Ext Libs -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.14/angular-ui-router.min.js"></script>
