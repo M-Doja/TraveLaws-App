@@ -1,5 +1,5 @@
 <div ng-controller="HomeController as vm">
-  <div class="img-wrap" style="margin-top:-20px;">
+  <div class="img-wrap" style="margin-top:-20px;text-align:center;">
     <div id="navBtnDiv">
       <md-input-container id="mdNavCon">
         <md-button  class="md-raised md-warn mdNavConBtn"ui-sref='Home' ng-click='vm.Home()'>Home</md-button>
@@ -7,14 +7,17 @@
         <md-button class="md-raised md-warn mdNavConBtn" ui-sref='About' ng-click='vm.showAboutPage()'>About TravState </md-button>
       </md-input-container>
     </div>
-    <div class="responsive"id="stateTitle">{{vm.title}}</div>
-    <h3 style="text-align:center;color:white;margin-top:100px;">Select a category of law for the corresponding state.</h3>
-    <h4 style="color:white;text-align:center;">Click the state flag to view state facts or the button to view state laws</h4><hr>
+    <div class="responsive"id="siteTitle" style="margin-bottom:-40px;">{{vm.title}}</div>
+    <div id="instructions">
+      <h3 id="h3"style="text-align:center;color:white;margin-top:130px;">Select a category of law for the corresponding state.</h3>
+      <h4 id="h4"style="color:white;text-align:center;">Click the state flag to view state facts or the button to view state laws</h4>
+    </div>
+
   </div>
 
   <div class="cards">
     <hr>
-    <div style="margin:575px auto"></div><div class='col-md-3' ng-repeat='s in vm.States| filter:searchText'>
+    <div id="spacer"></div><div class='col-md-3' ng-repeat='s in vm.States| filter:searchText'>
       <md-content style="text-align:center;background-color:rgba(20,100,0,0.3);width:220px;margin:20px auto">
         <md-card style="background-color:black;width:205px;">
           <!-- State Flag Image -->
@@ -65,8 +68,8 @@
   </div>
 
           <!-- MORE COMING notifying div -->
-          <div class='col-md-3 container' style="margin:300px auto">
-            <md-content style="text-align:center;background-color:rgba(20,100,0,0.3);;width:220px;margin:20px auto">
+          <div class='col-md-3 container' style="margin: auto">
+            <md-content style="text-align:center;background-color:rgba(20,100,0,0.3);width:220px;margin:20px auto">
               <md-card style="background-color:tan;width:205px;">
                 <!-- Background Image -->
                 <md-card-content id='statePic' style="text-align:center;background-size:100%;padding-top:10px;height:135px;background-color:lightgrey;">
@@ -74,7 +77,10 @@
                 </md-card-content>
               </md-card>
           </div>
-        <footer style="text-align:center;color:white"><p><b>&copy 2016 Phoja Unlimted LLC</b></p></footer>
+
+        	<div class="col-md-12">
+        		<footer style="text-align:center;color:white"><p><b>&copy 2016 Phoja Unlimted LLC</b></p></footer>
+        	</div>
     </div><!-- END OF LAWS PAGE / controller???-->
 
 

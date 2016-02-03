@@ -1,10 +1,10 @@
 <div id="ctrlDiv" ng-controller="HomeController as vm">
 
 
-  <div class="wrap"><!-- START OF LAWS PAGE -->
+
 
     <!-- BACKGROUND AND NAV BUTTONS -->
-    <div class="img-wrap">
+    <div class="img-wrap container">
       <div id="navBtnDiv">
         <md-input-container id="mdNavCon">
           <md-button class="md-raised md-warn mdNavConBtn" ui-sref='Laws' ng-click='vm.Home()'>State Laws</md-button>
@@ -16,13 +16,14 @@
       <div class="responsive"id="siteTitle">{{vm.title}}</div>
       <p style="text-align:center" id="siteHead">Where travel and law come together</p>
 
-      <div id="siteDesc" class="container">
-        <!-- <p><span style="font-size:1.5em">TravState</span> is your one stop resource for law information on different U.S. states. Whether you're on vacation or you're looking to move your business to another state, TravState is the resource for you!</p><hr> -->
+      <div id="siteDesc" class="container" style="">
         <h3 style="color:white;text-align:center;"><i><b>What is TravState?</b></i></h3>
         <p style="color:white;text-align:center;padding-bottom:40px;font-size:20px" >TravState is a resource used to find different state laws for different states all on one site. As some U.S. states don't have goverment websites regarding certain areas of law, here on TravState we make it easy for you to find and connect to those corresponding online state resources.</p>
       </div>
-      <hr>
-      <footer style="text-align:center;color:white"><p><b>&copy 2016 Phoja Unlimted LLC</b></p></footer>
-    </div>
-  </div>
+
+      <div class="col-md-12">
+        <footer style="text-align:center;color:white;bottom:0;"><p><b>&copy 2016 Phoja Unlimted LLC</b></p></footer>
+      </div>
+    </div> <!--image wrap-->
+
 </div>
