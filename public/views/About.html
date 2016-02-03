@@ -1,0 +1,76 @@
+<div ng-controller="HomeController as vm" class="wrap"style="margin-top:10px;height:100%">
+  <div class="img-wrap" style="margin-top:-10px;text-align:center;">
+    <div id="navBtnDiv">
+      <md-input-container id="mdNavCon">
+        <md-button  class="md-raised md-warn mdNavConBtn"ui-sref='Laws' ng-click='vm.Home()'>State Laws</md-button>
+        <md-button class="md-raised md-warn mdNavConBtn" ui-sref='Camping' ng-click='vm.showCamp()'>State Camping</md-button>
+        <md-button class="md-raised md-warn mdNavConBtn" ui-sref='Home' ng-click='vm.showAboutPage()'>Home </md-button>
+      </md-input-container>
+      <div class="AboutMsg" >
+        <div id='aboutDiv'class="row"  style="height:100%;margin-top:100px;margin:auto;width:100%;background-color:rgba(255,255,255,0.7);color:black;text-align:center;">
+          <div class="col-md-6">
+            <h1>What is TravState?</h1>
+            <p style="padding:10px 20px;font-size:1.5em;">The idea behind TravState is that if you are travelling or need information on another state that you are not familiar with, you can use this app to get high level overview of the laws, as well as a few basic demographics of the state you are interested in.</p>
+            <p style="padding:10px 20px;font-size:1.75em;text-align:center">Currently this app is still under development even though is is live. Please do continue to check back with us as we continue to improve and add more features. </p>
+
+            <p style="padding:10px 20px;font-size:1.75em;">If you have questions, comments, or suggestions please send them to</p>
+            <p style="text-align:center;font-size:1.5em;margin-top:-20px;"><a href="mailto:TeamTravState@gmail.com" target="_top">TeamTravState@gmail.com</a></p><br>
+            <h4 style="margin-bottom:50px;">to make a donation:<a href='https://www.paypal.me/DevDoja' target="_blank"> paypal.me/DevDoja</a></h4>
+          </div>
+          <div class="col-md-6">
+            <form style="background-color:rgba(0,0,0,0.6);max-width:400px;padding:20px;text-align:center;margin:5% auto;font-family:serif;border-radius:10px;margin-bottom:80px;">
+              <h1 style="color:white;font-family:serif;">Dou you have a suggestion? Just send us a request!</h1>
+              <!-- <input id="from" type="text" placeholder="Enter E-mail ID where you want to send" /><br><br> -->
+              <input id="subject" type="text" placeholder="Subject" /><br><br>
+              <textarea id="text"  placeholder="Please include: (name, number, and contact email)."></textarea><br><br>
+
+              <button style="font-size:1.7em;color:white"class="button"id="send_email">Send Request</button><hr>
+
+              <span id="message"></span>
+            </form>
+          </div>
+            <div class="col-md-12" style="height:15px;">
+              <footer style="text-align:center;color:white;">
+                <p id="foot"style="text-align:center"><b>&copy 2016 Phoja Unlimted LLC</b></p>
+              </footer>
+            </div>
+            <script type="text/javascript">
+            $(document).ready(function(){
+                $("#send_email").click(function(){
+                    var from;
+                    var to = "TeamTravState@gmail.com";
+                    var subject = document.getElementById("subject").value;
+                    var text = document.getElementById("text").value;
+                    console.log(to);
+                    if (text == "" && subject == "") {
+                      console.log('No data entered. Send cancelled');
+                      $("#message").html("<p style='color:white;font-family:serif;font-size:1.4em' >There is missing information! Make sure the subject and message areas are filled in.</p>");
+                      return;
+                    }
+                    $("#message").html("<p>Sending Message...Please wait</p>");
+                    $.get("/send",{to:to,subject:subject,text:text},function(data){
+                    if(data=="sent")
+                    {
+                        $("#message").empty().html("<br><br><br><h4 style='color:white;font-family:serif;margin-top:-60px;'>Your request has been sent to "+to+" .<br> Thanks for the request! We'll see what magic we can accopmlish!</h4>");
+                    }
+                  });
+                  document.getElementById("subject").value = '';
+                  document.getElementById("text").value = '';
+                });
+
+
+            });
+            </script>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+    <!-- <h1 id='campText' style="color:white;font-size:3.8em;padding-left:20px;padding-right:20px;">State Camping resources COMING SOON!</h1> -->
+
+
+
+
+
+</div>

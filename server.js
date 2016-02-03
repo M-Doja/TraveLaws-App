@@ -1,9 +1,22 @@
+if(!process.env.NODE_ENV){
+	require('dotenv').load();
+}
+var port = process.env.PORT || 3000;
 var express = require('express');
 var path = require('path');
 var bodyParser = require('body-parser');
+var nodemailer = require('nodemailer');
 var app = express();
-var port = process.env.PORT || 3000;
-
+var smtpTransport = nodemailer.createTransport("SMTP",{
+    secure: true,
+    service: "Gmail",
+    auth: {
+			// user: "",
+			// pass: ""
+			user: process.env.User_Name,
+			pass: process.env.User_Password
+    }
+});
 
 app.set('views', path.join(__dirname, 'views'));
 //set the view engine that will render HTML from the server to the client
@@ -24,6 +37,24 @@ app.use(bodyParser.json());
 //on homepage load, render the index page
 app.get('/', function(req, res) {
 	res.render('index');
+});
+
+app.get('/send',function(req,res){
+    var mailOptions={
+        to : req.query.to,
+        subject : req.query.subject,
+        text : req.query.text
+    }
+    console.log(mailOptions);
+    smtpTransport.sendMail(mailOptions, function(error, response){
+     if(error){
+            console.log(error);
+        res.end("error");
+     }else{
+            console.log("Message sent: " + response.message);
+        res.end("sent");
+         }
+});
 });
 
 var server = app.listen(port, function() {

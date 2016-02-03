@@ -13,6 +13,18 @@ body, html {height: 100%;margin: 0 auto; background-color: #333}
 position:absolute;height: 75%;width: 100%;}
 .wrap {min-height:calc(100vh - 18px);}
 #spacer {margin:540px auto;}
+#campText {padding-top: 390px; }
+#p1, #p2 { margin-right: -4px;width:45%;padding:20px;
+padding-bottom:25px;text-align: center;
+vertical-align: top;}
+.AboutMsg #Aboutcontainer { height:100%;margin-top:100px;background-color:rgba(255,255,255,0.7);padding:1px;color:black;}
+.AboutMsg {margin-top:100px;}
+.AboutText {display: inline-block;color: black}
+.AboutForm { display: inline-block;}
+footer {max-height: 15px:margin-top:60px;}
+#foot {text-align: center;}
+form button {background: transparent;border: none !important;}
+form button:hover {background-color: rgba(255,255,255,0.3);border-radius: 10px;}
 @media (min-width: 569px) {
   #siteTitle {font-size: 6em;}
   #siteHead  {background-color: transparent;font-size: 2.7em;margin-top:40px;}
@@ -21,12 +33,20 @@ position:absolute;height: 75%;width: 100%;}
   #instructions h3 {padding-top:20px;}
   #instructions h4 {padding-bottom:20px;}
   #spacer {margin:450px auto;}
+  #campText {padding-top: 420px; text-align: center;margin-bottom: 60px;}
+  /*.AboutForm {float:right; }*/
+  /*.AboutText {float:left;}*/
+  #aboutDiv {background-color:rgba(255,255,255,0.7);}
+  form textarea {width: 300px;height: 150px}
 }
 @media (min-width: 669px) {
   #siteDesc {margin-top:70px;}
+    #campText {padding-top: 450px; }
 }
 @media (min-width: 769px) {
   #siteDesc {margin-top:130px;}
+  #campText {padding-top: 450px;margin-bottom: 100px; }
+  footer {margin-top: 100px;}
 }
 
 /*@media (min-width: 359px) and (max-width: 569px){#siteDesc {margin-top:130px;}}*/
