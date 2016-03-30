@@ -1,4 +1,47 @@
 <div ng-controller="HomeController as vm">
+
+<style>
+var img = $(document.createElement("img"));
+$(img).attr({
+  "src": this url,
+  "data-index": count,
+  "title": this.title,
+  "alt": this.description
+});
+.container{display:inline; transform:rotateY(0deg); perspective:500px; margin:2em;}
+
+.container:hover .card,
+.container .hover .card{transform:rotateY(180deg);margin-right:-150px;}
+
+.container, .front, .back{width:280px; height:580px;margin:10px 50px}
+
+.front, .back{backface-visibility:hidden; position:absolute; top:0; left:0; }
+.front, .back{box-sizing:border-box;}
+
+.card{position:relative; display:block; transition:1.5s; transform-style:preserve-3d;margin:5px;}
+
+.front{z-index:2; transform: rotateY(0deg); background-size: cover;}
+
+.front h3{background:rgba(0, 0, 0, 0.5); color:#fff; text-align:center; padding:.5em;}
+
+.back{padding:1em; transform:rotateY(180deg); background:#eee;}
+nav{display:block; padding:.5em; margin:0;}
+nav a{display:block; list-style:none; background:#aaa; color:#fff; font-size:1.5em; margin-top:.5em; padding:.5em; text-align: center}
+nav a:hover{background: #333;}
+.last{margin-top: -500px;margin-right: 10px;}
+.col-md-12{padding-left: 0px;padding-right: 20px}
+</style>
+<script>
+  window.addEventListener("load", function(){
+    var containers = document.querySelectorAll(".container");
+    for(var i=0; i<containers.length; i++){
+      containers[i].addEventListener("touchstart", function(){
+        this.classList.toggle("hover");
+      });
+    }
+  });
+</script>
+
   <div class="img-wrap" style="margin-top:-20px;text-align:center;">
     <div id="navBtnDiv">
       <md-input-container id="mdNavCon">
@@ -15,9 +58,11 @@
 
   </div>
 
+
   <div class="cards">
     <hr>
-    <div id="spacer"></div><div class='col-md-3' ng-repeat='s in vm.States| filter:searchText'>
+    <div id="spacer"></div>
+    <div class='col-md-3' ng-repeat='s in vm.States| filter:searchText'>
       <md-content style="text-align:center;background-color:rgba(20,100,0,0.3);width:220px;margin:20px auto">
         <md-card style="background-color:black;width:205px;">
           <!-- State Flag Image -->
@@ -67,16 +112,49 @@
     </div>
   </div>
 
+  <!--  -->
+  <div class="container col-md-3" ng-repeat='s in vm.States| filter:searchText'>
+    <div class="card ">
+      <div class="front"   style="background-image:url('');" >
+        <img id='statePic'src='{{s.image}}' width='280' alt="" />
+        <h3>{{s.state}}</h3>
+      </div>
+      <div class="back">
+        <!-- <h3>A Tasty Burger</h3>
+        <p>This is a tasty burger served with cheese, tomatoe, and lettuce.</p> -->
+        <span style="text-align:right;background-color:lightblue;font-size:15px;padding-left:5px;">{{s.state}}</span><br>
+        <p><b>Nickname:</b> {{s.facts.stNickName}}</p>
+        <p><b>Motto:</b> {{s.facts.stMotto}}</p>
+        <p><b>Population:</b> {{s.facts.stPop}}</p>
+        <p><b>Sq. Area:</b> {{s.facts.stArea}}</p>
+        <p><b>Capitol:</b> {{s.facts.stCaptiol}}</p>
+        <p><b>Entered Union:</b> {{s.facts.stUnion}}</p>
+        <p><b>Mascot:</b> {{s.facts.stMascot}}</p>
+        <p><b>State Flower:</b> {{s.facts.stFlower}}</p>
+        <p><b>State Bird:</b> {{s.facts.stBird}}</p>
+        <nav>
+          <md-button style='color:black;' href="{{s.laws.gen}}" target="_blank">  General Laws </md-button>
+          <md-button style='color:black;' href="{{s.laws.bus}}" target="_blank">  Business Laws </md-button>
+          <md-button style='color:black;' href="{{s.laws.traf}}" target="_blank">  Traffic Laws </md-button>
+          <md-button style='color:black;' href="{{s.laws.gun}}" target="_blank">  Gun Laws </md-button>
+
+        </nav>
+      </div>
+    </div>
+  </div>
+
+  <!--  -->
+
           <!-- MORE COMING notifying div -->
-          <div class='col-md-3 container' style="margin: auto">
+          <!-- <div class='col-md-3 container' style="margin: auto">
             <md-content style="text-align:center;background-color:rgba(20,100,0,0.3);width:220px;margin:20px auto">
-              <md-card style="background-color:tan;width:205px;">
+              <md-card style="background-color:tan;width:205px;"> -->
                 <!-- Background Image -->
-                <md-card-content id='statePic' style="text-align:center;background-size:100%;padding-top:10px;height:135px;background-color:lightgrey;">
+                <!-- <md-card-content id='statePic' style="text-align:center;background-size:100%;padding-top:10px;height:135px;background-color:lightgrey;">
                   <h3 style="text-align:center;color:red;font-weight:bold">More states coming soon!</h3>
                 </md-card-content>
               </md-card>
-          </div>
+          </div> -->
 
         	<div class="col-md-12">
         		<footer style="text-align:center;color:white"><p><b>&copy 2016 Phoja Unlimted LLC</b></p></footer>
